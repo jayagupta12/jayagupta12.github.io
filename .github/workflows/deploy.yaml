@@ -15,8 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # Checks out a copy of your repository on the ubuntu-latest machine
-      - name: Download nodejs
-        run: apt install nodejs
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12'   
 
       # Runs the Super-Linter action
       - name: install vercel
